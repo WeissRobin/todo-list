@@ -1,0 +1,16 @@
+.todo-app {
+    display: grid;
+    grid-template-columns: 300px auto;
+    height: 100vh;
+    padding: 30px;
+}
+
+.content {
+    height: 100%;
+}
+
+.navigation {
+    height: 100%;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+}
