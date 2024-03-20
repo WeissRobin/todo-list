@@ -9,43 +9,155 @@
 <body>
     <main class="todo-app">
         <aside class="navigation">
-            <h2>Menu</h2>
+            <h2 class="section-heading">Menu</h2>
             <div class="search-box">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512"><path fill="#7c7c7c" d="M456.69 421.39L362.6 327.3a173.81 173.81 0 0 0 34.84-104.58C397.44 126.38 319.06 48 222.72 48S48 126.38 48 222.72s78.38 174.72 174.72 174.72A173.81 173.81 0 0 0 327.3 362.6l94.09 94.09a25 25 0 0 0 35.3-35.3M97.92 222.72a124.8 124.8 0 1 1 124.8 124.8a124.95 124.95 0 0 1-124.8-124.8"/></svg>
                 <input type="text" placeholder="Search">
             </div>
-            <div class="tasks flex-item">
+            <div class="tasks nav-item">
                 <h3>Tasks</h3>
-                <div class="tasks-item">
+                <div class="tasks-item nav-button" data-active="true" data-content="all">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 32 32"><path class="path" fill="#7c7c7c" d="M30 15h-2V7H13V5h15a2.002 2.002 0 0 1 2 2Z"/><path class="path" fill="#7c7c7c" d="M25 20h-2v-8H8v-2h15a2.002 2.002 0 0 1 2 2Z"/><path class="path" fill="#7c7c7c" d="M18 27H4a2.002 2.002 0 0 1-2-2v-8a2.002 2.002 0 0 1 2-2h14a2.002 2.002 0 0 1 2 2v8a2.002 2.002 0 0 1-2 2M4 17v8h14.001L18 17Z"/></svg>
+                    <button>All</button>
+                </div>
+                <div class="tasks-item nav-button" data-content="upcoming">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0zM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path class="path" fill="#7c7c7c" d="M5.94 5.94a1.5 1.5 0 0 1 2.12 0l5 5a1.5 1.5 0 0 1 0 2.12l-5 5a1.5 1.5 0 0 1-2.12-2.12L9.878 12l-3.94-3.94a1.5 1.5 0 0 1 0-2.12Zm6 0a1.5 1.5 0 0 1 2.12 0l5 5a1.5 1.5 0 0 1 0 2.12l-5 5a1.5 1.5 0 0 1-2.12-2.12L15.878 12l-3.94-3.94a1.5 1.5 0 0 1 0-2.12Z"/></g></svg>
-                    <button>Upcoming</button>
+                    <button class="nav-button">Upcoming</button>
                 </div>
-                <div class="tasks-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32"><path class="path" fill="#7c7c7c" d="M10.28 5.28L7 8.563l-1.28-1.28L4.28 8.72l2 2l.72.686l.72-.687l4-4zM15 7v2h13V7zm-4.72 6.28L7 16.564L5.72 15.28l-1.44 1.44l2 2l.72.686l.72-.687l4-4l-1.44-1.44zM15 15v2h13v-2zm-4.72 6.28L7 24.563l-1.28-1.28l-1.44 1.437l2 2l.72.686l.72-.687l4-4l-1.44-1.44zM15 23v2h13v-2z"/></svg>
-                    <button>Today</button>
+                <div class="tasks-item nav-button" data-content="today">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 48 48"><path fill="none" stroke="#7c7c7c" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="m5 10l3 3l6-6M5 24l3 3l6-6M5 38l3 3l6-6m7-11h22M21 38h22M21 10h22"/></svg>
+                    <button class="nav-button">Today</button>
                 </div>
-                <div class="tasks-item">
+                <div class="tasks-item nav-button" data-content="calendar">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path class="path" fill="#7c7c7c" d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                    <button>Calendar</button>
+                    <button class="nav-button">Calendar</button>
                 </div>
-                <div class="tasks-item">
+                <div class="tasks-item nav-button" data-content="sticky">
                     <svg xmlns="http://www.w3.org/2000/svg" width="0.88em" height="1em" viewBox="0 0 448 512"><path class="path" fill="#7c7c7c" d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32l64-64z"/></svg>
-                    <button>Sticky wall</button>
+                    <button class="nav-button">Sticky wall</button>
                 </div>
             </div>
-            <div class="projects flex-item">
+            <div class="projects nav-item">
                 <h3>Projects</h3>
-                <ul>
-                    <li class="project-name"><div class="project-color"></div>Personal</li>
-                    <li class="project-name"><div class="project-color"></div>Work</li>
+                <ul id="project-list">
                 </ul>
-                <button class="add-project">
+                <button class="add-button add-project">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="#7c7c7c" d="M18 12.998h-5v5a1 1 0 0 1-2 0v-5H6a1 1 0 0 1 0-2h5v-5a1 1 0 0 1 2 0v5h5a1 1 0 0 1 0 2"/></svg>
                     Add New Project
                 </button>
             </div>
         </aside>
         <div class="content"></div>
+        <div class="quick-add">
+            <input type="text" id="task-name" name="task-name" placeholder="Task name">
+            <input type="text" id="task-description" name="task-description" placeholder="Task description">
+            <div class="buttons">
+                <div class="due-date button" data-expand="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 16 16"><path fill="#959595" d="M5.248 8.997a.748.748 0 1 0 0-1.497a.748.748 0 0 0 0 1.497m.749 1.752a.748.748 0 1 1-1.497 0a.748.748 0 0 1 1.497 0M8 8.997A.748.748 0 1 0 8 7.5a.748.748 0 0 0 0 1.497m.749 1.752a.748.748 0 1 1-1.497 0a.748.748 0 0 1 1.497 0m2-1.752a.748.748 0 1 0 0-1.497a.748.748 0 0 0 0 1.497M14 4.5A2.5 2.5 0 0 0 11.5 2h-7A2.5 2.5 0 0 0 2 4.5v7A2.5 2.5 0 0 0 4.5 14h7a2.5 2.5 0 0 0 2.5-2.5zM3 6h10v5.5a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 3 11.5zm1.5-3h7A1.5 1.5 0 0 1 13 4.5V5H3v-.5A1.5 1.5 0 0 1 4.5 3"/></svg>
+                    <span>Due Date</span>
+                </div>
+                <div class="priority button" data-expand="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="#959595" d="M18.383 4.318a1 1 0 0 0-1.09.217a3.248 3.248 0 0 1-4.586 0a5.25 5.25 0 0 0-7.414 0A.997.997 0 0 0 5 5.242v13a1 1 0 1 0 2 0v-4.553a3.248 3.248 0 0 1 4.293.26a5.25 5.25 0 0 0 7.414 0a1 1 0 0 0 .293-.707v-8a1 1 0 0 0-.617-.924"/></svg>
+                    <span>Priority</span>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="project-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="none" stroke="#959595" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m12 21l7.794-4.5v-9M12 21l-7.794-4.5v-9M12 21v-9m7.794-4.5L12 3L4.206 7.5m15.588 0L12 12M4.206 7.5L12 12"/></svg>
+                    <select id="project-select"></select>
+                </div>
+                <div class="controls">
+                    <button id="quick-cancel" style="--clr:#fc686d; --font:#fff">Cancel</button>
+                    <button id="quick-add" style="--clr:#f1f1f1">Add task</button>
+                </div>
+            </div>
+            <div id="specification" style="display: none;">
+                <div class="date-spec">
+                    <div class="date-option"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="#a88400" d="M122 40V16a6 6 0 0 1 12 0v24a6 6 0 0 1-12 0m68 88a62 62 0 1 1-62-62a62.07 62.07 0 0 1 62 62m-12 0a50 50 0 1 0-50 50a50.06 50.06 0 0 0 50-50M59.76 68.24a6 6 0 1 0 8.48-8.48l-16-16a6 6 0 0 0-8.48 8.48Zm0 119.52l-16 16a6 6 0 1 0 8.48 8.48l16-16a6 6 0 1 0-8.48-8.48M192 70a6 6 0 0 0 4.24-1.76l16-16a6 6 0 0 0-8.48-8.48l-16 16A6 6 0 0 0 192 70m4.24 117.76a6 6 0 0 0-8.48 8.48l16 16a6 6 0 0 0 8.48-8.48ZM46 128a6 6 0 0 0-6-6H16a6 6 0 0 0 0 12h24a6 6 0 0 0 6-6m82 82a6 6 0 0 0-6 6v24a6 6 0 0 0 12 0v-24a6 6 0 0 0-6-6m112-88h-24a6 6 0 0 0 0 12h24a6 6 0 0 0 0-12"/></svg>Today</div>
+                    <div class="date-option"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="#8d3da4" d="M5.615 21q-.69 0-1.152-.462Q4 20.075 4 19.385V6.615q0-.69.463-1.152Q4.925 5 5.615 5h1.77V2.77h1.077V5h7.153V2.77h1V5h1.77q.69 0 1.152.463q.463.462.463 1.152v12.77q0 .69-.462 1.152q-.463.463-1.153.463zm0-1h12.77q.23 0 .423-.192q.192-.193.192-.423v-8.77H5v8.77q0 .23.192.423q.193.192.423.192M5 9.615h14v-3q0-.23-.192-.423Q18.615 6 18.385 6H5.615q-.23 0-.423.192Q5 6.385 5 6.615zm0 0V6z"/></svg>This week</div>
+                    <div class="date-option"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><g fill="none" stroke="#0050d1" stroke-width="1"><path d="M5.556 18h12.888A3.556 3.556 0 0 0 22 14.444V12a2 2 0 1 0-4 0v1.2a.8.8 0 0 1-.8.8H6.8a.8.8 0 0 1-.8-.8V12a2 2 0 1 0-4 0v2.444A3.556 3.556 0 0 0 5.556 18Z"/><path d="M20 10c0-.93 0-1.394-.077-1.78a4 4 0 0 0-3.143-3.143C16.394 5 15.93 5 15 5H9c-.93 0-1.394 0-1.78.077A4 4 0 0 0 4.077 8.22C4 8.606 4 9.07 4 10"/><path stroke-linecap="round" d="M20 19v-1M4 19v-1"/></g></svg>This weekend</div>
+                    <div class="date-option"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 28 28"><path fill="#8d3da4" d="M6.25 3A3.25 3.25 0 0 0 3 6.25v3.69l-.72-.72a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l2-2a.75.75 0 1 0-1.06-1.06l-.72.72V6.25c0-.966.784-1.75 1.75-1.75h15.5c.966 0 1.75.784 1.75 1.75V8H6a.756.756 0 0 0-.1.006c.397.034.784.203 1.087.507c.278.278.443.626.495.987H23.5v12.25a1.75 1.75 0 0 1-1.75 1.75H6.25a1.75 1.75 0 0 1-1.75-1.75v-7a.75.75 0 0 0-1.5 0v7A3.25 3.25 0 0 0 6.25 25h15.5A3.25 3.25 0 0 0 25 21.75V6.25A3.25 3.25 0 0 0 21.75 3zm3.748 15.751a1.25 1.25 0 1 0-2.5 0a1.25 1.25 0 0 0 2.5 0m5.255 0a1.25 1.25 0 1 0-2.5 0a1.25 1.25 0 0 0 2.5 0m-5.255-5a1.25 1.25 0 1 0-2.5 0a1.25 1.25 0 0 0 2.5 0m5.255 0a1.25 1.25 0 1 0-2.5 0a1.25 1.25 0 0 0 2.5 0m5.254 0a1.25 1.25 0 1 0-2.5 0a1.25 1.25 0 0 0 2.5 0"/></svg>Next week</div>
+                    <div class="date-option"><svg xmlns="http://www.w3.org/2000/svg" width="2.3rem" height="2.3rem" viewBox="-2 -2 24 24"><rect x=-2 y=-2 width="24" height="24" fill="none"/><path fill="#ff5757" d="M5.094 16.32A8 8 0 0 0 16.32 5.094zM3.68 14.906L14.906 3.68A8 8 0 0 0 3.68 14.906M10 20C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10s-4.477 10-10 10"/></svg>No date</div>
+                </div>
+                <div class="datepicker"></div>
+            </div>
+            <div id="priority" style="display: none;">
+                <div class="priority-spec">
+                    <div class="priority-option"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="#c90000" d="M18.383 4.318a1 1 0 0 0-1.09.217a3.248 3.248 0 0 1-4.586 0a5.25 5.25 0 0 0-7.414 0A.997.997 0 0 0 5 5.242v13a1 1 0 1 0 2 0v-4.553a3.248 3.248 0 0 1 4.293.26a5.25 5.25 0 0 0 7.414 0a1 1 0 0 0 .293-.707v-8a1 1 0 0 0-.617-.924"/></svg><span>Priority 1</span></div>
+                    <div class="priority-option"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"  viewBox="0 0 24 24"><path fill="#c7a11a" d="M18.383 4.318a1 1 0 0 0-1.09.217a3.248 3.248 0 0 1-4.586 0a5.25 5.25 0 0 0-7.414 0A.997.997 0 0 0 5 5.242v13a1 1 0 1 0 2 0v-4.553a3.248 3.248 0 0 1 4.293.26a5.25 5.25 0 0 0 7.414 0a1 1 0 0 0 .293-.707v-8a1 1 0 0 0-.617-.924"/></svg><span>Priority 2</span></div>
+                    <div class="priority-option"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"  viewBox="0 0 24 24"><path fill="#1f62cf" d="M18.383 4.318a1 1 0 0 0-1.09.217a3.248 3.248 0 0 1-4.586 0a5.25 5.25 0 0 0-7.414 0A.997.997 0 0 0 5 5.242v13a1 1 0 1 0 2 0v-4.553a3.248 3.248 0 0 1 4.293.26a5.25 5.25 0 0 0 7.414 0a1 1 0 0 0 .293-.707v-8a1 1 0 0 0-.617-.924"/></svg><span>Priority 3</span></div>
+                    <div class="priority-option"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"  viewBox="0 0 24 24"><path fill="#000000" d="M18.383 4.318a1 1 0 0 0-1.09.217a3.248 3.248 0 0 1-4.586 0a5.25 5.25 0 0 0-7.414 0A.997.997 0 0 0 5 5.242v13a1 1 0 1 0 2 0v-4.553a3.248 3.248 0 0 1 4.293.26a5.25 5.25 0 0 0 7.414 0a1 1 0 0 0 .293-.707v-8a1 1 0 0 0-.617-.924"/></svg><span>Priority 4</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="add-project-window">
+            <div class="project-content">
+                <h2>Create a New Project</h2>
+                <div class="padding-16">
+                    <label for="project-name">Project Name:</label>
+                    <input type="text" id="project-name" name="project-name">
+                    <label class="dropdown-label" for="dropdown-button">Choose a color:</label>
+                    <button name="project-color" id="dropdown-button"><div class="color-circle"></div></button>
+                    <ul class="dropdown">
+                        <li data-active-color="true" class="dropdown-item"><div class="color-circle" style="--clr:#50C878"></div><span data-color="#50C878" class="color-name">Emerald Green</span></li>
+                        <li class="dropdown-item"><div class="color-circle" style="--clr:#9966CC"></div><span data-color="#9966CC" class="color-name">Amethyst</span></li>
+                        <li class="dropdown-item"><div class="color-circle" style="--clr:#FF6F61"></div><span data-color="#FF6F61" class="color-name">Coral Red</span></li>
+                        <li class="dropdown-item"><div class="color-circle" style="--clr:#960018"></div><span data-color="#960018" class="color-name">Crimson</span></li>
+                        <li class="dropdown-item"><div class="color-circle" style="--clr:#007FFF"></div><span data-color="#007FFF" class="color-name">Azure</span></li>
+                        <li class="dropdown-item"><div class="color-circle" style="--clr:#9ACD32"></div><span data-color="#9ACD32" class="color-name">Chartreuse</span></li>
+                        <li class="dropdown-item"><div class="color-circle" style="--clr:#6B4423"></div><span data-color="#6B4423" class="color-name">Cocoa Brown</span></li>
+                        <li class="dropdown-item"><div class="color-circle" style="--clr:#800080"></div><span data-color="#800080" class="color-name">Purple</span></li>
+                        <li class="dropdown-item"><div class="color-circle" style="--clr:#FFBF00"></div><span data-color="#FFBF00" class="color-name">Amber</span></li>
+                        <li class="dropdown-item"><div class="color-circle" style="--clr:#6A0DAD"></div><span data-color="#6A0DAD" class="color-name">Violet</span></li>
+                        <li class="dropdown-item"><div class="color-circle" style="--clr:#FFC0CB"></div><span data-color="#FFC0CB" class="color-name">Pink</span></li>
+                        <li class="dropdown-item"><div class="color-circle" style="--clr:#D10056"></div><span data-color="#D10056" class="color-name">Ruby</span></li>
+                    </ul>
+                    <div class="controls">
+                        <button id="project-cancel" style="--clr:#fc686d; --font:#fff">Cancel</button>
+                        <button id="project-add" style="--clr:#f1f1f1">Add Project</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="detailed-task">
+            <h2 class="section-heading">Task</h2>
+            <div contenteditable="true" class="detailed-task__name">School homework</div>
+            <div contenteditable="true" class="detailed-task__desc">Description</div>
+            <div class="detailed-task__wrapper">
+                <label for="project">
+                    Project
+                    <div>
+                        <div>
+                            <input name="project" class="project-select"></input>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="none" stroke="#454545" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m7 10l5 5m0 0l5-5"/></svg>
+                        </div>
+                    </div>
+                </label>
+                <label for="datepicker">
+                    Due date
+                    <div>
+                        <input name="datepicker" class="detailed-task__datepicker"></input>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="none" stroke="#454545" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m7 10l5 5m0 0l5-5"/></svg>
+                    </div>
+                </label>
+            </div>
+            <h2 class="section-heading">Subtasks:</h2>
+            <button class="add-button add-subtask">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="#7c7c7c" d="M18 12.998h-5v5a1 1 0 0 1-2 0v-5H6a1 1 0 0 1 0-2h5v-5a1 1 0 0 1 2 0v5h5a1 1 0 0 1 0 2"/></svg>
+                Add New Subtask
+            </button>
+            <ul class="detailed-task__subtasks">
+                <li class="subtask">
+                    <input type="checkbox">
+                    Correct documentation
+                </li>
+            </ul>
+            <div class="detailed-task__buttons">
+                <button class="delete">Delete Task</button>
+                <button class="save">Save Changes</button>
+            </div>
+        </div>
     </main>
 </body>
 </html>
