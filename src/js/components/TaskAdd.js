@@ -1,4 +1,5 @@
 import { UI } from "../UserInterface";
+import '../../styles/taskAdd.scss';
 const UserInterface = new UI();
 
 export const TaskAdd = () => {

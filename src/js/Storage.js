@@ -25,4 +25,7 @@ export class Storage {
         this.removeProject(project);
         localStorage.setItem(project, JSON.stringify(obj));
     }
+    loadTask = (name, project) => {
+        return this.getProject(project).tasks.filter(task => task.name === name)[0];
+    }
 }

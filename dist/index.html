@@ -126,20 +126,33 @@
             <div contenteditable="true" class="detailed-task__desc">Description</div>
             <div class="detailed-task__wrapper">
                 <label for="project">
-                    Project
-                    <div>
-                        <div>
-                            <input name="project" class="project-select"></input>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="none" stroke="#454545" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m7 10l5 5m0 0l5-5"/></svg>
-                        </div>
+                    <span>Project</span>
+                    <div class="project-select-box input-box">
+                        <input name="project" class="project-select"></input>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="none" stroke="#454545" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m7 10l5 5m0 0l5-5"/></svg>
+                        <ul class="project-select-box__project-list" style="display:none;"">
+                            <li>School</li>
+                            <li>Personal</li>
+                        </ul>
                     </div>
                 </label>
                 <label for="datepicker">
-                    Due date
-                    <div>
+                    <span>Due date</span>
+                    <div class="duedate-select input-box">
                         <input name="datepicker" class="detailed-task__datepicker"></input>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="none" stroke="#454545" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m7 10l5 5m0 0l5-5"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="none" stroke="#454545" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m7 10l5 5m0 0l5-5"/></svg>
                     </div>
+                </label>
+                <label for="priority">
+                    <span>Priority</span>
+                    <div class="priority-select input-box">
+                        <input name="priority" class="detailed-task__priority"></input>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="none" stroke="#454545" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m7 10l5 5m0 0l5-5"/></svg>
+                    </div>
+                    <ul class="priority__priority-list" style="display:none;"">
+                        <li>Priority 1</li>
+                        <li>Priority 2</li>
+                    </ul>
                 </label>
             </div>
             <h2 class="section-heading">Subtasks:</h2>

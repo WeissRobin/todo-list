@@ -1,0 +1,56 @@
+@import './variables';
+
+.tasks-container {
+    .task {
+        * {
+            pointer-events: none;
+        }
+        font-family: $outfit;
+        display: flex;
+        padding: 15px 25px;
+        .task-name {
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin-left: 20px;
+            color: $grey-300;
+        }
+        .task-secondary {
+            margin-left: 20px;
+            font-size: 1.5rem;
+            margin-top: 10px;
+            color: $grey-300;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .task-desc-wrapper {
+                display: flex;
+                font-weight: 500;
+                align-items: center;
+                justify-content: center;
+                height: 30px;
+                font-size: 1.4rem;
+                &:nth-child(2) {
+                    border-right: 2px solid $border-color;
+                    border-left: 2px solid $border-color;
+                    padding-inline: 10px;
+                }
+            }
+        }
+        &:hover {
+            background-color: #f7f7f7;
+            cursor: pointer; 
+            border-radius: 8px;
+        }
+        &:not(:last-child) {
+            border-bottom: 2px solid $border-color;
+        }
+        .task-checkbox {
+            margin-top: 5px;
+            width: 18px;
+            height: 18px;
+        }
+        .task-main {
+            flex: 1;
+        }
+    }
+}

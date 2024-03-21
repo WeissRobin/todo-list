@@ -1,6 +1,8 @@
-import '../../styles/all.scss';
 import { Storage } from '../Storage';
 import { UI } from '../UserInterface';
+import { OpenTask } from '../components/DetailedTask';
+
+import '../../styles/index.scss';
 
 const content = document.querySelector('.content');
 const newStorage = new Storage();
@@ -46,8 +48,14 @@ export const renderContent = async () => {
         .then(() => {
             const tasks = document.querySelectorAll('.task');
             tasks.forEach(task => {
-                task.addEventListener('click', () => {
-                    
+                task.addEventListener('click', e => {
+                    //get task from storage
+                    const taskName = e.target.querySelector('.task-name').textContent;
+                    const taskProject = e.target.querySelector('.task-project').textContent;
+                    const task = newStorage.loadTask(taskName, taskProject);
+                    //ui render
+                    const { name, description, dueDate, priority, project, subTasks } = task;
+                    UserInterface.detailedTask(name, description, dueDate, priority, project, subTasks);
                 });
             });
         })
