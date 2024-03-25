@@ -28,4 +28,26 @@ export class Storage {
     loadTask = (name, project) => {
         return this.getProject(project).tasks.filter(task => task.name === name)[0];
     }
+    deleteTask = (name, project) => {
+        const obj = this.getProject(project);
+        const allTasks = this.getProject(project).tasks.filter(task => task.name !== name);
+        this.removeProject(project);
+        obj.tasks = allTasks;
+        localStorage.setItem(project, JSON.stringify(obj));
+    }
+    changeName = (task) => {
+        
+    }
+
+    changeDesc = (task) => {
+        
+    }
+
+    changeDueDate = (task) => {
+       
+    }
+
+    changePriority = (task) => {
+        
+    }
 }

@@ -120,9 +120,9 @@
                 </div>
             </div>
         </div>
-        <div class="detailed-task">
+        <div class="detailed-task" style="display:none;">
             <h2 class="section-heading">Task</h2>
-            <div contenteditable="true" class="detailed-task__name">School homework</div>
+            <div contenteditable="true" class="detailed-task__name"></div>
             <div contenteditable="true" class="detailed-task__desc">Description</div>
             <div class="detailed-task__wrapper">
                 <label for="project">
@@ -145,14 +145,16 @@
                 </label>
                 <label for="priority">
                     <span>Priority</span>
-                    <div class="priority-select input-box">
+                    <div class="priority-select-box input-box">
                         <input name="priority" class="detailed-task__priority"></input>
                         <svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="none" stroke="#454545" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m7 10l5 5m0 0l5-5"/></svg>
+                        <ul class="priority-select-box__priority-list" style="display:none;"">
+                            <li>Priority 1</li>
+                            <li>Priority 2</li>
+                            <li>Priority 3</li>
+                            <li>Priority 4</li>
+                        </ul>
                     </div>
-                    <ul class="priority__priority-list" style="display:none;"">
-                        <li>Priority 1</li>
-                        <li>Priority 2</li>
-                    </ul>
                 </label>
             </div>
             <h2 class="section-heading">Subtasks:</h2>
@@ -170,6 +172,9 @@
                 <button class="delete">Delete Task</button>
                 <button class="save">Save Changes</button>
             </div>
+            <span class="close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 32 32"><path fill="#959595" d="M24.879 2.879A3 3 0 1 1 29.12 7.12l-8.79 8.79a.125.125 0 0 0 0 .177l8.79 8.79a3 3 0 1 1-4.242 4.243l-8.79-8.79a.125.125 0 0 0-.177 0l-8.79 8.79a3 3 0 1 1-4.243-4.242l8.79-8.79a.125.125 0 0 0 0-.177l-8.79-8.79A3 3 0 0 1 7.12 2.878l8.79 8.79a.125.125 0 0 0 .177 0z"/></svg>
+            </span>
         </div>
     </main>
 </body>

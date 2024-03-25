@@ -7,21 +7,5 @@ export class Todo {
         this.project = project;
         this.subTasks = [];
     }
-
-    changeName = (name) => {
-        this.name = name;
-    }
-
-    changeDesc = (description) => {
-        this.description = description;
-    }
-
-    changeDueDate = (dueDate) => {
-        this.dueDate = dueDate;
-    }
-
-    changePriority = (priority) => {
-        this.priority = priority;
-    }
 }
 

@@ -42,6 +42,15 @@ export class UI {
         <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="none" stroke="#7c7c7c" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m10 17l5-5m0 0l-5-5"/></svg>
         `;
         tasksContainer.appendChild(taskDiv);
+        taskDiv.addEventListener('click', e => {
+            //get task from storage
+            const taskName = e.target.querySelector('.task-name').textContent;
+            const taskProject = e.target.querySelector('.task-project').textContent;
+            const task = newStorage.loadTask(taskName, taskProject);
+            //ui render
+            const { name, description, dueDate, priority, project, subTasks } = task;
+            this.detailedTask(name, description, dueDate, priority, project, subTasks);
+        });
     }
     loadAllTasks = async () => {
         return new Promise((resolve, reject) => {
@@ -74,6 +83,8 @@ export class UI {
         });
     }    
     detailedTask = (name, description, dueDate, priority, project, subTasks) => {
+        const detailedTask = document.querySelector('.detailed-task');
+
         const taskName = document.querySelector('.detailed-task__name');
         const taskDesc = document.querySelector('.detailed-task__desc');
         const taskDue = document.querySelector('.detailed-task__datepicker');
@@ -85,5 +96,7 @@ export class UI {
         taskDue.value = dueDate;
         taskPriority.value = priority;
         taskProject.value = project;
+
+        detailedTask.style.display = 'block';
     }
 }

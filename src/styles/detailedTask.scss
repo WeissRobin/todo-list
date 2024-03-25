@@ -1,6 +1,7 @@
 @import "./variables";
 
 .detailed-task {
+  position: relative;
   width: 550px;
   background-color: #f4f4f4;
   border-radius: 10px;
@@ -76,6 +77,23 @@
             }
         }
     }
+    .priority-select-box {
+      position: relative;
+      &__priority-list {
+        position: absolute;
+        width: 100%;
+        top: 33px;
+        background-color: $border-color;
+        border: 1px solid $grey-200;
+        li  {
+          padding: 5px;
+          cursor: pointer;
+        }
+        li:hover {
+            background-color: white;
+        }
+      }
+    }
     label {
       font-size: 1.7rem;
       font-weight: 600;
@@ -130,5 +148,19 @@
     width: 90%;
     margin: auto;
     border-bottom: 1px solid $border-color;
+  }
+  .close {
+    font-size: 1.8rem;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transform: translateX(-170%);
+    margin-top: 20px;
+    cursor: pointer;
+    &:hover {
+      path {
+        fill: $grey-300;
+      }
+    }
   }
 }
