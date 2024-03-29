@@ -19,8 +19,9 @@ export class Storage {
     removeProject = (projectName) => {
         localStorage.removeItem(projectName);
     }
-    addTask = (project, todo) => {
+    addTask = (todo, project) => {
         const obj = this.getProject(project);
+        console.log(todo, project, obj);
         obj.tasks.push(todo);
         this.removeProject(project);
         localStorage.setItem(project, JSON.stringify(obj));
@@ -35,19 +36,8 @@ export class Storage {
         obj.tasks = allTasks;
         localStorage.setItem(project, JSON.stringify(obj));
     }
-    changeName = (task) => {
-        
-    }
-
-    changeDesc = (task) => {
-        
-    }
-
-    changeDueDate = (task) => {
-       
-    }
-
-    changePriority = (task) => {
-        
+    updateTask = (taskOld, taskNew, projectOld, projectNew) => {
+        this.deleteTask(taskOld, projectOld);
+        this.addTask(taskNew, projectNew);
     }
 }

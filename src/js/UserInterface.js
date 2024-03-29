@@ -25,7 +25,7 @@ export class UI {
 
         //Add to storage
         const newTodo = new Todo(name, desc, dueDate, priority, project);
-        newStorage.addTask(project, newTodo);
+        newStorage.addTask(newTodo, project);
 
         dueDate = dueDate ? `<div class="task-desc-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="#454545" d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>${dueDate}</div>` : '' 
         priority = priority ? `<div class="task-desc-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="#454545" d="M18.383 4.318a1 1 0 0 0-1.09.217a3.248 3.248 0 0 1-4.586 0a5.25 5.25 0 0 0-7.414 0A.997.997 0 0 0 5 5.242v13a1 1 0 1 0 2 0v-4.553a3.248 3.248 0 0 1 4.293.26a5.25 5.25 0 0 0 7.414 0a1 1 0 0 0 .293-.707v-8a1 1 0 0 0-.617-.924"/></svg>${priority}</div>` : '';
@@ -90,6 +90,9 @@ export class UI {
         const taskDue = document.querySelector('.detailed-task__datepicker');
         const taskPriority = document.querySelector('.detailed-task__priority');
         const taskProject = document.querySelector('.project-select');
+
+        detailedTask.setAttribute('old_name', name);
+        detailedTask.setAttribute('old_project', project);
     
         taskName.textContent = name;
         taskDesc.textContent = description;
@@ -98,5 +101,13 @@ export class UI {
         taskProject.value = project;
 
         detailedTask.style.display = 'block';
+    }
+    deleteTask = (name, project) => {
+        const tasks = document.querySelectorAll(`.task`);
+        tasks.forEach(task => {
+            if(task.textContent.includes(name) && task.textContent.includes(project)) {
+                task.remove();
+            }
+        });
     }
 }
