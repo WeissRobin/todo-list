@@ -1,3 +1,10 @@
-Project in development!
-need to add tonssss of things (choosed really complicated one)
-If you want to see early version of this project click here -> https://jocular-brigadeiros-f84385.netlify.app
+# TodoList
+
+Uses Javascript and Webpack
+
+TodoList for recording your tasks. Simple todo app. Design is made by myself.
+
+Need to do:
+- responsivness
+- real time deleting task
+- refactor
