@@ -1,4 +1,4 @@
-# TodoList
+# TodoList ✔️
 
 Uses Javascript and Webpack
 
@@ -8,3 +8,6 @@ Need to do:
 - responsivness
 - real time deleting task
 - refactor
+- dont like the design anymore :D
+
+Link to preview -> todolistie.netlify.app
